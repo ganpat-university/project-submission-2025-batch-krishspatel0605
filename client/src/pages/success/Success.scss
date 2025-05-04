@@ -1,0 +1,104 @@
+.success-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff; // Dark background
+    font-family: "Poppins", sans-serif;
+    padding: 2rem;
+  
+    .message-box {
+      background: #1547a4;
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 1.5rem;
+  
+      .success-text {
+        font-size: 1.5rem;
+        color: #3d0fc5; // Light purple Gigster accent
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+  
+      .redirect-info {
+        font-size: 1.1rem;
+        color: #ffffff;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+  
+      .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #1d56bf;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+      }
+    }
+  }
+  
+  // Spinner animation
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .success-container {
+      padding: 1.5rem;
+    }
+  
+    .message-box {
+      padding: 1.5rem;
+      max-width: 90%;
+      margin-bottom: 1rem;
+    }
+  
+    .success-text {
+      font-size: 1.25rem;
+    }
+  
+    .redirect-info {
+      font-size: 1rem;
+    }
+  
+    .spinner {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .success-container {
+      padding: 1rem;
+    }
+  
+    .message-box {
+      padding: 1rem;
+      max-width: 90%;
+    }
+  
+    .success-text {
+      font-size: 1.1rem;
+    }
+  
+    .redirect-info {
+      font-size: 0.9rem;
+    }
+  
+    .spinner {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  
