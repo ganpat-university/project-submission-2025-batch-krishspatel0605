@@ -1,12 +1,16 @@
 import axios from "axios";
 
-const isDevelopment = import.meta.env.MODE === "development";
-
 const newRequest = axios.create({
-  baseURL: isDevelopment
-    ? "http://localhost:8000/api"   // Development backend URL
-    : "/api",                      // Production (served via backend)
-  withCredentials: true,           // Required for cookies/auth
+  baseURL: "http://localhost:8000/api/",
+  withCredentials: true,
+});
+
+newRequest.interceptors.request.use((config) => {
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  if (currentUser?.token) {
+    config.headers.Authorization = `Bearer ${currentUser.token}`;
+  }
+  return config;
 });
 
 export default newRequest;

@@ -26,15 +26,16 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      const response = await newRequest.post("/auth/logout");
-      console.log("Logout response:", response); // Log the response for debugging
-
-      localStorage.setItem("currentUser", null);
-      navigate("/");
+      await newRequest.post("/auth/logout", {}, { withCredentials: true });
+  
+      localStorage.removeItem("currentUser"); // Properly remove the user
+      navigate("/"); // Redirect to home
+      window.location.reload(); // Refresh to re-render the layout (optional)
     } catch (err) {
-      console.log(err);
+      console.log("Logout error:", err);
     }
   };
+  
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
@@ -43,7 +44,7 @@ function Navbar() {
           <Link className="link" to="/">
             <span className="text">Gigster</span>
           </Link>
-          <span className="dot">.</span>
+          
         </div>
         <div className="links">
           <span>Gigster Business</span>

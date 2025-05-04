@@ -115,4 +115,36 @@
       }
     }
   }
+  .success-message {
+    min-height: 60vh; // or whatever height works best visually
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  
+    .success {
+      font-size: 1.5rem;
+      color: green;
+      margin-bottom: 1rem;
+    }
+  
+    .open-gmail-button {
+      background-color: #ea4335;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+  
+      &:hover {
+        background-color: #c1351d;
+      }
+    }
+  }
+   
+
 }

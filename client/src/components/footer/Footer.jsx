@@ -69,7 +69,7 @@ function Footer() {
         <div className="bottom">
           <div className="left">
             <h2>Gigster</h2>
-            <span>© Gigster International Ltd. 2023</span>
+            <span>© Gigster International Ltd. 2025</span>
           </div>
           <div className="right">
             <div className="social">

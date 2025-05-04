@@ -19,7 +19,9 @@ const Pay = () => {
     const makeRequest = async () => {
       try {
         const res = await newRequest.post(
-          `/orders/create-payment-intent/${id}`
+          `/orders/create-payment-intent/${id}`,
+
+
         );
         setClientSecret(res.data.clientSecret);
       } catch (err) {
@@ -37,13 +39,24 @@ const Pay = () => {
     appearance,
   };
 
-  return <div className="pay">
-    {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
+  return (
+    <div className="pay">
+      {clientSecret ? (
+        <div className="pay-wrapper">
+          <h2>Complete Your Payment</h2>
+          <Elements options={options} stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
+        </div>
+      ) : (
+        <div className="pay-wrapper">
+          <h2>Processing Payment...</h2>
+          <div className="loading">Please wait while we prepare your payment...</div>
+        </div>
       )}
-  </div>;
+    </div>
+  );
+  
 };
 
 export default Pay;

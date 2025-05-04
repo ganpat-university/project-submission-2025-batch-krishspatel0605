@@ -1,0 +1,91 @@
+#payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: #f7f7f7;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+  
+    .StripeElement {
+      background: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #d8d6d6;
+      color: #333;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+  
+      &:focus {
+        border-color: #1d56bf;
+      }
+    }
+  
+    button {
+      padding: 12px;
+      background-color: #1d56bf;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      &:hover {
+        background-color: #1547a4;
+      }
+  
+      &:disabled {
+        background-color: #aaa;
+        cursor: not-allowed;
+      }
+  
+      .spinner {
+        border: 2px solid #f3f3f3;
+        border-top: 2px solid #1d56bf;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+      }
+    }
+  
+    #payment-message {
+      font-size: 16px;
+      text-align: center;
+      color: #333;
+      margin-top: 1rem;
+    }
+  
+    .loading {
+      font-size: 18px;
+      color: #aaa;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+  
+  // Spinner animation
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 600px) {
+    #payment-form {
+      padding: 1.5rem;
+      gap: 1rem;
+  
+      button {
+        padding: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+  

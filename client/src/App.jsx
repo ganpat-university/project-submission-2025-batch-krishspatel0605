@@ -19,7 +19,19 @@ import {
 } from "@tanstack/react-query";
 import Pay from "./pages/pay/Pay";
 import Success from "./pages/success/Success";
+import VerifyAccount from "./pages/verify/VerifyAccount"; // adjust path
+import LoginVerify from "./pages/login/loginverify"; // adjust path
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ForgotPasswordRequest from "./pages/resetpassword/forgotpassword";
+import ResetPassword from "./pages/resetpassword/resetpassword"; // adjust path
+
+
+// inside JSX (App return)
+
+
 function App() {
+<ToastContainer position="top-right" autoClose={3000} />
   const queryClient = new QueryClient();
 
   const Layout = () => {
@@ -91,6 +103,22 @@ function App() {
           path: "/success",
           element: <Success />,
         },
+        {
+          path:"/verify/:token",
+          element: <VerifyAccount />,
+        },
+        {
+          path: "/login/verify/:token",
+          element: <LoginVerify />
+        },
+        {
+          path: "/login/forgot",
+          element: <ForgotPasswordRequest />,
+        },
+        {
+          path: "/login/reset-password/:token",
+          element: <ResetPassword />,
+        }        
       ],
     },
   ]);

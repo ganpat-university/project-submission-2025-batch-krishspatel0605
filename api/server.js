@@ -32,17 +32,12 @@ const connect = async () => {
     }
 };
 
-// ✅ CORS Configuration — Fixed for frontend at localhost:5173
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true,
 }));
 
-// ✅ Handle preflight OPTIONS requests for all routes
-app.options("*", cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-}));
+
 
 // Middleware setup
 app.use(express.json());
