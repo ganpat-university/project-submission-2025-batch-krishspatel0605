@@ -1,0 +1,43 @@
+<<<<<<< HEAD
+env/
+env
+secret_file.json
+# Environment
+.env
+env/
+*.env
+
+# Alembic migrations
+alembic/versions/*.pyc
+alembic/*.pyc
+alembic/versions/__pycache__
+script.py.mako
+
+# Python-specific
+**/__pycache__/
+__pycache__/
+*.py[cod]
+
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Other
+*.sqlite3
+*.db
+=======
+node_modules
+<<<<<<< HEAD
+*.pyc
+__pycache__
+db.sqlite3
+.venv
+*.log
+=======
+.venv
+>>>>>>> eb37a9a (initial commit and sign up module done db not connected)
+>>>>>>> dfa72382cbf12758b34e97a989f26c0ca80c5543
